@@ -10,14 +10,14 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.login.api.model.LoginResponse;
 import com.example.login.api.model.User;
-import com.example.login.api.service.LoginService;
+import com.example.login.api.service.LoginRegisterService;
 
 @RestController
 @CrossOrigin
-public class LoginController {
+public class LoginRegisterController {
 
 	@Autowired
-	LoginService loginService;
+	LoginRegisterService loginService;
 	
 	@PostMapping("login")
 	public LoginResponse login(@RequestBody User user) {
@@ -25,5 +25,13 @@ public class LoginController {
 		LoginResponse response = loginService.checkIdPassword(user);
 		System.out.println(response);
 		return response;
+	}
+	
+	@PostMapping("register")
+	public User register(@RequestBody User user) {
+		System.out.println(user);
+		User dbUser = loginService.register(user);
+		System.out.println(dbUser);
+		return dbUser;
 	}
 }

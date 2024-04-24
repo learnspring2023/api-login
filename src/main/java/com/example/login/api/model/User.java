@@ -1,6 +1,8 @@
 package com.example.login.api.model;
 
 import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Getter;
@@ -17,7 +19,9 @@ import lombok.ToString;
 public class User {
 
 	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
-	String password;
 	String name;
+	String emailId;
+	String password;
 }

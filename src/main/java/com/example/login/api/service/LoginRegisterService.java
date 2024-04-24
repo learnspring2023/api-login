@@ -5,13 +5,13 @@ import org.springframework.stereotype.Service;
 
 import com.example.login.api.model.LoginResponse;
 import com.example.login.api.model.User;
-import com.example.login.api.repository.LoginRepository;
+import com.example.login.api.repository.LoginRegisterRepository;
 
 @Service
-public class LoginService {
+public class LoginRegisterService {
 
 	@Autowired
-	LoginRepository loginRepository;
+	LoginRegisterRepository loginRepository;
 	
 	public LoginResponse checkIdPassword(User user) {
 		User dbUser = loginRepository.findByIdAndPassword(user.getId(),user.getPassword());
@@ -23,4 +23,9 @@ public class LoginService {
 		}
 		return response;
 	}
+
+	public User register(User user) {
+		return loginRepository.save(user);
+	}
+
 }

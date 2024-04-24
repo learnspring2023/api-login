@@ -6,7 +6,7 @@ import org.springframework.stereotype.Repository;
 import com.example.login.api.model.User;
 
 @Repository
-public interface LoginRepository extends CrudRepository<User, Integer> {
+public interface LoginRegisterRepository extends CrudRepository<User, Integer> {
 	User findByIdAndPassword(int userId, String password);
 	//save
 	//findAll
