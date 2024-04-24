@@ -1,0 +1,18 @@
+//Login
+curl --location 'http://localhost:8080/login' \
+--header 'Content-Type: application/json' \
+--data '{
+    "id":1,
+    "password":"pass1"
+}'
+
+//Register
+
+curl --location 'http://localhost:8080/register' \
+--header 'Content-Type: application/json' \
+--data-raw '{
+    "name":"Rohit",
+    "emailId":"a@c.com",
+    "password":"pass2"
+}'
+
