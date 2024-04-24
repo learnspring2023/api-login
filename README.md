@@ -29,13 +29,15 @@ INSERT INTO students (ID, Name, Course) VALUES (1, 'John Doe', 'Fullstack');
 INSERT INTO students (ID, Name, Course) VALUES (2, 'Jane Smith', 'Testing');
 
 
-Table: Student
-ID | Name | Course
-===================
-1    Chetan	 Fullstack
-//1    Ram	 Fullstack
-2    Chitra	 Testing
+Table: Student  
+ID | Name | Course  
+===================   
+1    Chetan	 Fullstack  
+//1    Ram	 Fullstack    
+2    Chitra	 Testing  
+  
 
+select * from student;  
 
-select * from student;
+drop table user_info;  
 
